@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Swiper Demo</title>
+    <title>CoDesign Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
 
     <!-- Demo styles -->
     <style>
@@ -12,18 +14,23 @@
             position: relative;
             height: 100%;
         }
+
         body {
             background: #eee;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
-            color:#000;
+            color: #000;
             margin: 0;
             padding: 0;
         }
+
+
         .swiper-container {
             width: 100%;
             height: 100%;
+
         }
+
         .swiper-slide {
             text-align: center;
             font-size: 18px;
@@ -43,15 +50,107 @@
             align-items: center;
         }
 
-        .bg {
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        /*.bg {*/
+        /*!*position: relative;*!*/
+        /*opacity: 0;*/
+        /*animation: project_slide 2s forwards;*/
+        /*}*/
+
+        /*@keyframes project_slide{*/
+        /*from{opacity:.5;left:100%}*/
+        /*to{opacity:1;left:0%;}*/
+        /*}*/
+
+        .bg-one {
+            background-image: url("images/bg1.jpg");
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            -webkit-animation: zout 120s infinite;
+            -o-animation: zout 50s infinite;
+            animation: zout 50s infinite;
+        }
+
+        @keyframes zout {
+            0% {
+                opacity: 0;
+            }
+            5% {
+                opacity: 1
+            }
+            95% {
+                transform: scale3d(1.5, 1.5, 1.5) translate3d(-2px, -200px, 0);
+                animation-timing-function: ease-in;
+                opacity: 1;
+            }
+            100% {
+                transform: scale3d(2, 2, 2) translate3d(-600px, -600px, 0);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+        }
+
+        .bg-two {
+            background-image: url("images/bg2.jpg");
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            animation: zout 50s infinite;
+        }
+
+        .bg-three {
+            background-image: url("images/bg3.jpg");
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            animation: zout 50s infinite;
+        }
+
+        .bg-four {
+            background-image: url("images/bg4.jpg");
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            animation: zout 50s infinite;
+        }
+
+        .project__description {
+            display: -moz-flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             position: relative;
-            opacity: 0;
-            animation: project_slide 2s forwards;
         }
         
-        @keyframes project_slide{
-            from{opacity:.5;left:100%}
-            to{opacity:1;left:0%;}
+
+        .project_brief p {
+            -webkit-animation: none;
+            -o-animation: none;
+            animation: none;
+            background: darkslategray;
+            opacity: 0.5;
+            padding: 15px;
+            color: #fff;
+            width: 30%;
+            transform: translateX(-70%);
+            position: absolute;
+            text-align: left;
+            border-left: 5px solid #ddd;
+            padding-left: 25px;
         }
 
     </style>
@@ -61,31 +160,71 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <div class="bg">
-                <img src="https://unsplash.it/800/400?random" alt="">
+            <div class="bg bg-one">
+
+                <div class="project__description">
+                    <div class="project_brief">
+
+                        <div data-aos="fade-up" data-aos-anchor-placement="center-center">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt, ratione. Autem
+                            corporis dolorem earum eius esse harum illum in inventore itaque libero magnam, magni,
+                            maiores nemo quaerat quam quas ratione recusandae repellat totam, voluptatum. Architecto
+                            consequatur debitis delectus, error, excepturi ipsa ipsam modi nostrum numquam officia
+                            omnis, possimus provident quasi repellendus repudiandae tempora temporibus voluptas. Beatae
+                        </div>
+
+
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="swiper-slide">
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, odio.</div>
+            <div class="bg bg-two">
+                <div class="project__description">
+                    <div class="project_brief">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt, ratione. Autem
+                            corporis dolorem earum eius esse harum illum in inventore itaque libero magnam, magni,
+                            maiores nemo quaerat quam quas ratione recusandae repellat totam, voluptatum. Architecto
+                            consequatur debitis delectus, error, excepturi ipsa ipsam modi nostrum numquam officia
+                            omnis, possimus provident quasi repellendus repudiandae tempora temporibus voluptas. Beatae
+                        </p>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="swiper-slide">
-
+            <div class="bg bg-three">
+                <div class="project__description">
+                    <div class="project_brief">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt, ratione. Autem
+                            corporis dolorem earum eius esse harum illum in inventore itaque libero magnam, magni,
+                            maiores nemo quaerat quam quas ratione recusandae repellat totam, voluptatum. Architecto
+                            consequatur debitis delectus, error, excepturi ipsa ipsam modi nostrum numquam officia
+                            omnis, possimus provident quasi repellendus repudiandae tempora temporibus voluptas. Beatae
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="swiper-slide">
-
-        </div>
-
-        <div class="swiper-slide">
-
-        </div>
-
-        <div class="swiper-slide">
-
-        </div>
-        <div class="swiper-slide">
-
+            <div class="bg bg-four">
+                <div class="project__description">
+                    <div class="project_brief">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt, ratione. Autem
+                            corporis dolorem earum eius esse harum illum in inventore itaque libero magnam, magni,
+                            maiores nemo quaerat quam quas ratione recusandae repellat totam, voluptatum. Architecto
+                            consequatur debitis delectus, error, excepturi ipsa ipsam modi nostrum numquam officia
+                            omnis, possimus provident quasi repellendus repudiandae tempora temporibus voluptas. Beatae
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Navigation -->
@@ -93,17 +232,28 @@
     <div class="swiper-button-prev"></div>
 </div>
 
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 400,
+    })
+</script>
 <!-- Swiper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7js/swiper.esm.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper('.swiper-container', {
         direction: 'vertical',
+        slidesPerView: 1,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
+        },
+        mousewheel: {
+            invert: false,
+            sensitivity: 10
         }
     });
 </script>
